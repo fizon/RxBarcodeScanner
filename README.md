@@ -12,9 +12,9 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Requirements
 
 RxBarcodeScanner depends on the following pods:
-    - BarcodeScanner
-    - RxSwift
-    - RxCocoa
+- BarcodeScanner
+- RxSwift
+- RxCocoa
 
 ## Installation
 
