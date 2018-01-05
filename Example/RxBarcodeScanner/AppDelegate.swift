@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  RxBarcodeScanner
 //
-//  Created by seasox on 01/04/2018.
-//  Copyright (c) 2018 seasox. All rights reserved.
+//  Created by Jeremy Boy on 01/04/2018.
+//  Copyright (c) 2018 Jeremy Boy. All rights reserved.
 //
 
 import UIKit

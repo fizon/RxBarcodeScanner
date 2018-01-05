@@ -1,0 +1,6 @@
+framework module RxBarcodeScanner {
+  umbrella header "RxBarcodeScanner-umbrella.h"
+
+  export *
+  module * { export * }
+}

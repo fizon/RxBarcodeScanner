@@ -20,8 +20,30 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0L6-eh-lMh">
+                                <rect key="frame" x="151" y="318" width="72" height="30"/>
+                                <state key="normal" title="Start Scan"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ArT-jx-f4h">
+                                <rect key="frame" x="187" y="356" width="0.0" height="0.0"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="0L6-eh-lMh" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="9lH-2c-Aja"/>
+                            <constraint firstItem="0L6-eh-lMh" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="CKQ-xS-DgL"/>
+                            <constraint firstItem="ArT-jx-f4h" firstAttribute="top" secondItem="0L6-eh-lMh" secondAttribute="bottom" constant="8" id="KoO-KI-iYs"/>
+                            <constraint firstItem="ArT-jx-f4h" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="rsX-s5-mPz"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="button" destination="0L6-eh-lMh" id="QhS-IA-SU6"/>
+                        <outlet property="label" destination="ArT-jx-f4h" id="Diy-DP-f4L"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
