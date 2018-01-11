@@ -28,19 +28,24 @@ public protocol BarcodeScannerDelegate: BarcodeScannerCodeDelegate, BarcodeScann
 
 extension RxBarcodeScannerDelegateProxy {
 
-    public var code: Observable<String> {
+    public var code: Observable<(ParentObject, String)> {
         return _code.asObservable()
     }
 
-    public var error: Observable<Error> {
+    public var error: Observable<(ParentObject, Error)> {
         return _error.asObservable()
+    }
+
+    public var dismiss: Observable<ParentObject> {
+        return _dismiss.asObservable()
     }
 }
 
 open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController, BarcodeScannerDelegate>, DelegateProxyType {
 
-    fileprivate let _code = PublishSubject<String>()
-    fileprivate let _error = PublishSubject<Error>()
+    fileprivate let _code = PublishSubject<(ParentObject, String)>()
+    fileprivate let _error = PublishSubject<(ParentObject, Error)>()
+    fileprivate let _dismiss = PublishSubject<ParentObject>()
 
     public init(parentObject: ParentObject) {
         super.init(parentObject: parentObject, delegateProxy: RxBarcodeScannerDelegateProxy.self)
@@ -53,22 +58,14 @@ open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController
 
 extension RxBarcodeScannerDelegateProxy: BarcodeScannerDelegate {
     public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        _code.on(.next(code))
-        controller.dismiss(animated: true) {
-            controller.reset()
-        }
+        _code.on(.next((controller, code)))
     }
 
     public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
-        _error.on(.next(error))
-        controller.dismiss(animated: true) {
-            controller.reset()
-        }
+        _error.on(.next((controller, error)))
     }
 
     public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
-        controller.dismiss(animated: true) {
-            controller.reset()
-        }
+        _dismiss.on(.next(controller))
     }
 }

@@ -33,13 +33,34 @@ class ViewController: UIViewController {
 
         barcodeScanner.rx
             .code
-            .bind(to: label.rx.text)
+            .subscribe(onNext: { [weak self] controller, barcode in
+                self?.label.text = barcode
+                controller.dismiss(animated: true) {
+                    controller.reset()
+                }
+            })
+            .disposed(by: disposeBag)
+
+        barcodeScanner.rx
+            .dismiss
+            .subscribe { event in
+                switch event {
+                case .next(let controller):
+                    controller.dismiss(animated: true) {
+                        controller.reset()
+                    }
+                case .completed:
+                    print("Completed")
+                case .error(let error):
+                    print(error)
+                }
+            }
             .disposed(by: disposeBag)
 
         barcodeScanner.rx
             .error
-            .subscribe(onNext: { error in
-                print(error)
+            .subscribe(onNext: { controller, error in
+                controller.resetWithError(message: error.localizedDescription)
             })
             .disposed(by: disposeBag)
     }
