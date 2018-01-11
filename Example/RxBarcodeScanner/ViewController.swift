@@ -33,8 +33,8 @@ class ViewController: UIViewController {
 
         barcodeScanner.rx
             .code
-            .subscribe(onNext: { [weak self] controller, barcode in
-                self?.label.text = barcode
+            .subscribe(onNext: { [weak self] controller, barcode, type in
+                self?.label.text = "Scanned \(type): \(barcode)"
                 controller.dismiss(animated: true) {
                     controller.reset()
                 }

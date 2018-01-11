@@ -28,7 +28,7 @@ public protocol BarcodeScannerDelegate: BarcodeScannerCodeDelegate, BarcodeScann
 
 extension RxBarcodeScannerDelegateProxy {
 
-    public var code: Observable<(ParentObject, String)> {
+    public var code: Observable<(ParentObject, String, String)> {
         return _code.asObservable()
     }
 
@@ -43,7 +43,7 @@ extension RxBarcodeScannerDelegateProxy {
 
 open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController, BarcodeScannerDelegate>, DelegateProxyType {
 
-    fileprivate let _code = PublishSubject<(ParentObject, String)>()
+    fileprivate let _code = PublishSubject<(ParentObject, String, String)>()
     fileprivate let _error = PublishSubject<(ParentObject, Error)>()
     fileprivate let _dismiss = PublishSubject<ParentObject>()
 
@@ -58,7 +58,7 @@ open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController
 
 extension RxBarcodeScannerDelegateProxy: BarcodeScannerDelegate {
     public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
-        _code.on(.next((controller, code)))
+        _code.on(.next((controller, code, type)))
     }
 
     public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
