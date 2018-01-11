@@ -10,5 +10,5 @@ language: swift
 # - gem install cocoapods # Since Travis is not always on latest version
 # - pod install --project-directory=Example
 script:
-- set -o pipefail && xcodebuild test -enableCodeCoverage YES -workspace Example/RxBarcodeScanner.xcworkspace -scheme RxBarcodeScanner-Example -sdk iphonesimulator9.3 ONLY_ACTIVE_ARCH=NO | xcpretty
+- xcodebuild clean build -workspace Example/RxBarcodeScanner.xcworkspace -scheme RxBarcodeScanner-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO
 - pod lib lint
