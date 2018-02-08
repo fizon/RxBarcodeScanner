@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxBarcodeScanner'
-  s.version          = '4.1.2-1'
+  s.version          = '4.1.2'
   s.summary          = 'RxSwift extensions for BarcodeScanner'
 
 # This description is used to generate tags and improve search results.
