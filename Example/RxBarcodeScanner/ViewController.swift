@@ -17,22 +17,28 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var label: UILabel!
 
-    private let barcodeScanner = BarcodeScannerViewController()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        button.rx
+        // Create scanner in flatMap or keep instance as property
+        // You can also use BarcodeScannerViewController.rx.createWith(navigationController:animated:configure:)
+        // to push scanner on navigation stack
+        let scanner = button.rx
             .tap
-            .subscribe(onNext: { [weak self] _ in
-                guard let barcodeScanner = self?.barcodeScanner else { return }
-                self?.present(barcodeScanner, animated: true)
-            })
-            .disposed(by: disposeBag)
+            .flatMapLatest { [weak self] _ -> Observable<BarcodeScannerViewController> in
+                guard let _self = self else { return Observable.never() }
+                return BarcodeScannerViewController.rx.createWith(parent: _self) { scanner in
+                    // configure scanner
+                    scanner.headerViewController.titleLabel.text = "RxBarcodeScanner"
+                    scanner.headerViewController.closeButton.tintColor = .red
+                }
+            }
+            .share(replay: 1)
 
-        barcodeScanner.rx
-            .code
+        scanner
+            .flatMapLatest { $0.rx.code }
             .subscribe(onNext: { [weak self] controller, barcode, type in
                 self?.label.text = "Scanned \(type): \(barcode)"
                 controller.dismiss(animated: true) {
@@ -41,8 +47,8 @@ class ViewController: UIViewController {
             })
             .disposed(by: disposeBag)
 
-        barcodeScanner.rx
-            .dismiss
+        scanner
+            .flatMapLatest { $0.rx.dismiss }
             .subscribe { event in
                 switch event {
                 case .next(let controller):
@@ -57,8 +63,8 @@ class ViewController: UIViewController {
             }
             .disposed(by: disposeBag)
 
-        barcodeScanner.rx
-            .error
+        scanner
+            .flatMapLatest { $0.rx.error }
             .subscribe(onNext: { controller, error in
                 controller.resetWithError(message: error.localizedDescription)
             })
