@@ -11,21 +11,21 @@ import RxSwift
 import RxCocoa
 import BarcodeScanner
 
-public extension Reactive where Base: BarcodeScannerController {
+public extension Reactive where Base: BarcodeScannerViewController {
 
     private var delegate: RxBarcodeScannerDelegateProxy {
         return RxBarcodeScannerDelegateProxy.proxy(for: base)
     }
 
-    public var code: Observable<(BarcodeScannerController, String, String)> {
+    public var code: Observable<(BarcodeScannerViewController, String, String)> {
         return delegate.code
     }
 
-    public var dismiss: Observable<BarcodeScannerController> {
+    public var dismiss: Observable<BarcodeScannerViewController> {
         return delegate.dismiss
     }
 
-    public var error: Observable<(BarcodeScannerController, Error)> {
+    public var error: Observable<(BarcodeScannerViewController, Error)> {
         return delegate.error
     }
 }

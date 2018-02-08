@@ -11,7 +11,7 @@ import RxSwift
 import RxCocoa
 import BarcodeScanner
 
-extension BarcodeScannerController: HasDelegate {
+extension BarcodeScannerViewController: HasDelegate {
     public var delegate: BarcodeScannerDelegate? {
         get {
             return codeDelegate as? BarcodeScannerDelegate
@@ -41,7 +41,7 @@ extension RxBarcodeScannerDelegateProxy {
     }
 }
 
-open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController, BarcodeScannerDelegate>, DelegateProxyType {
+open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerViewController, BarcodeScannerDelegate>, DelegateProxyType {
 
     fileprivate let _code = PublishSubject<(ParentObject, String, String)>()
     fileprivate let _error = PublishSubject<(ParentObject, Error)>()
@@ -57,15 +57,15 @@ open class RxBarcodeScannerDelegateProxy: DelegateProxy<BarcodeScannerController
 }
 
 extension RxBarcodeScannerDelegateProxy: BarcodeScannerDelegate {
-    public func barcodeScanner(_ controller: BarcodeScannerController, didCaptureCode code: String, type: String) {
+    public func scanner(_ controller: BarcodeScannerViewController, didCaptureCode code: String, type: String) {
         _code.on(.next((controller, code, type)))
     }
 
-    public func barcodeScanner(_ controller: BarcodeScannerController, didReceiveError error: Error) {
+    public func scanner(_ controller: BarcodeScannerViewController, didReceiveError error: Error) {
         _error.on(.next((controller, error)))
     }
 
-    public func barcodeScannerDidDismiss(_ controller: BarcodeScannerController) {
+    public func scannerDidDismiss(_ controller: BarcodeScannerViewController) {
         _dismiss.on(.next(controller))
     }
 }

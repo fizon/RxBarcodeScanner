@@ -1,6 +1,6 @@
 {
   "name": "RxBarcodeScanner",
-  "version": "3.0.1",
+  "version": "4.1.2",
   "summary": "RxSwift extensions for BarcodeScanner",
   "description": "RxBarcodeScanner adds reactive extensions for https://github.com/hyperoslo/BarcodeScanner",
   "homepage": "https://github.com/seasox/RxBarcodeScanner",
@@ -13,7 +13,7 @@
   },
   "source": {
     "git": "https://github.com/seasox/RxBarcodeScanner.git",
-    "tag": "3.0.1"
+    "tag": "4.1.2"
   },
   "social_media_url": "https://twitter.com/HumZ91",
   "platforms": {

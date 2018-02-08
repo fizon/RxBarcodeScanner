@@ -17,7 +17,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var label: UILabel!
 
-    private let barcodeScanner = BarcodeScannerController()
+    private let barcodeScanner = BarcodeScannerViewController()
     private let disposeBag = DisposeBag()
     
     override func viewDidLoad() {

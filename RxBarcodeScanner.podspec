@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'RxBarcodeScanner'
-  s.version          = '3.0.3'
+  s.version          = '4.1.2'
   s.summary          = 'RxSwift extensions for BarcodeScanner'
 
 # This description is used to generate tags and improve search results.
@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'AVFoundation'
-  s.dependency 'BarcodeScanner'
+  s.dependency 'BarcodeScanner', '~> 4.1.2'
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
