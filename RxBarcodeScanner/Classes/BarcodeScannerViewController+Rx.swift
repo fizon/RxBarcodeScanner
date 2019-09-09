@@ -17,15 +17,15 @@ public extension Reactive where Base: BarcodeScannerViewController {
         return RxBarcodeScannerDelegateProxy.proxy(for: base)
     }
 
-    public var code: Observable<(BarcodeScannerViewController, String, String)> {
+    var code: Observable<(BarcodeScannerViewController, String, String)> {
         return delegate.code
     }
 
-    public var dismiss: Observable<BarcodeScannerViewController> {
+    var dismiss: Observable<BarcodeScannerViewController> {
         return delegate.dismiss
     }
 
-    public var error: Observable<(BarcodeScannerViewController, Error)> {
+    var error: Observable<(BarcodeScannerViewController, Error)> {
         return delegate.error
     }
 }

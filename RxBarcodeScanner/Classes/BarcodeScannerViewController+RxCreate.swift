@@ -18,7 +18,7 @@ public extension BarcodeScannerViewController {
 }
 
 public extension Reactive where Base: BarcodeScannerViewController {
-    public static func createWith(parent: UIViewController?, animated: Bool = true, configure: @escaping (BarcodeScannerViewController) throws -> () = { x in }) -> Observable<BarcodeScannerViewController> {
+    static func createWith(parent: UIViewController?, animated: Bool = true, configure: @escaping (BarcodeScannerViewController) throws -> () = { x in }) -> Observable<BarcodeScannerViewController> {
         return Observable.create { [weak parent] observer in
             let scanner = BarcodeScannerViewController()
             let dismissDisposable = scanner.rx
@@ -52,7 +52,7 @@ public extension Reactive where Base: BarcodeScannerViewController {
         }
     }
 
-    public static func createWith(navigationController nc: UINavigationController, animated: Bool = true, configure: @escaping (BarcodeScannerViewController) throws -> () = { x in }) -> Observable<BarcodeScannerViewController> {
+    static func createWith(navigationController nc: UINavigationController, animated: Bool = true, configure: @escaping (BarcodeScannerViewController) throws -> () = { x in }) -> Observable<BarcodeScannerViewController> {
         return Observable.create { [weak nc] observer in
             let scanner = BarcodeScannerViewController()
             let dismissDisposable = scanner.rx
