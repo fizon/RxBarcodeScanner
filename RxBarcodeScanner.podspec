@@ -38,7 +38,7 @@ Pod::Spec.new do |s|
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   s.frameworks = 'UIKit', 'AVFoundation'
-  s.dependency 'BarcodeScanner', '~> 4.1.2'
+  s.dependency 'BarcodeScanner', '~> 4.1.3'
   s.dependency 'RxSwift'
   s.dependency 'RxCocoa'
   s.pod_target_xcconfig = { 'SWIFT_VERSION' => '4.0' }
