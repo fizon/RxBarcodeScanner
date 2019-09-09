@@ -21,6 +21,8 @@ Pod::Spec.new do |s|
     RxBarcodeScanner adds reactive extensions for https://github.com/hyperoslo/BarcodeScanner
                        DESC
 
+  s.swift_version   = "4.0"
+
   s.homepage         = 'https://github.com/seasox/RxBarcodeScanner'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
