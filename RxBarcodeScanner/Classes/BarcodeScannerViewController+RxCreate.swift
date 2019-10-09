@@ -6,6 +6,7 @@
 //  Copyright © 2018 FIZON GmbH. All rights reserved.
 //
 
+import UIKit
 import Foundation
 import RxSwift
 import BarcodeScanner
