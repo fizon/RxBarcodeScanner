@@ -15,12 +15,13 @@ let package = Package(
 			targets: ["RxBarcodeScanner"]),
 	],
 	dependencies: [
-		.package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.5.0"))
+		.package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "4.5.0")),
+		.package(url: "https://github.com/fizon/BarcodeScanner", .branch("master"))
 	],
 	targets: [
 		.target(
 			name: "RxBarcodeScanner",
-			dependencies: ["RxSwift"],
+			dependencies: ["BarcodeScanner", "RxCocoa", "RxSwift"],
 			path: "RxBarcodeScanner"),
 	]
 )
