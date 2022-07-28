@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
 	name: "RxBarcodeScanner",
 	platforms: [
-		.iOS(.v10)
+		.iOS(.v12)
 	],
 	products: [
 		// Products define the executables and libraries produced by a package, and make them visible to other packages.
@@ -15,8 +15,8 @@ let package = Package(
 			targets: ["RxBarcodeScanner"]),
 	],
 	dependencies: [
-		.package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "5.0.0")),
-		.package(url: "https://github.com/fizon/BarcodeScanner", .branch("master"))
+		.package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
+		.package(url: "https://github.com/hyperoslo/BarcodeScanner", .upToNextMajor(from: "5.0.0"))
 	],
 	targets: [
 		.target(
