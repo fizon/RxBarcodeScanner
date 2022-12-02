@@ -16,7 +16,7 @@ let package = Package(
 	],
 	dependencies: [
 		.package(url: "https://github.com/ReactiveX/RxSwift.git", .upToNextMajor(from: "6.0.0")),
-		.package(url: "https://github.com/hyperoslo/BarcodeScanner", .upToNextMajor(from: "5.0.0"))
+		.package(url: "https://github.com/fizon/BarcodeScanner.git", revision: "6702c09f711840d031d29d92da50d935e8810ff9") //Tag 5.0.4
 	],
 	targets: [
 		.target(
