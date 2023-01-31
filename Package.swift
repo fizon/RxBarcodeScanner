@@ -25,6 +25,6 @@ let package = Package(
 		.target(
 			name: "RxBarcodeScanner",
 			dependencies: ["BarcodeScanner", "RxSwift", .product(name: "RxCocoa", package: "RxSwift")],
-            path: "Sources"),
+            path: "RxBarcodeScanner"),
 	]
 )
