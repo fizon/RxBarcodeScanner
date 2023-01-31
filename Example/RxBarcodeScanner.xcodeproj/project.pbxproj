@@ -178,6 +178,8 @@
 			dependencies = (
 			);
 			name = RxBarcodeScanner_Example;
+			packageProductDependencies = (
+			);
 			productName = RxBarcodeScanner;
 			productReference = 607FACD01AFB9204008FA782 /* RxBarcodeScanner_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -215,12 +217,12 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = D567GQY3UQ;
+						DevelopmentTeam = PYVCDS8V4K;
 						LastSwiftMigration = 0900;
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
-						DevelopmentTeam = D567GQY3UQ;
+						DevelopmentTeam = PYVCDS8V4K;
 						LastSwiftMigration = 0900;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -231,10 +233,13 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -466,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -512,7 +517,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
@@ -525,7 +530,7 @@
 			baseConfigurationReference = 9D90C40BA5A5F83E68CE9F62 /* Pods-RxBarcodeScanner_Example.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D567GQY3UQ;
+				DEVELOPMENT_TEAM = PYVCDS8V4K;
 				INFOPLIST_FILE = RxBarcodeScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -541,7 +546,7 @@
 			baseConfigurationReference = F003A952BFA944498422B873 /* Pods-RxBarcodeScanner_Example.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = D567GQY3UQ;
+				DEVELOPMENT_TEAM = PYVCDS8V4K;
 				INFOPLIST_FILE = RxBarcodeScanner/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
@@ -556,7 +561,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 51477ED9DFF329EABC8757A5 /* Pods-RxBarcodeScanner_Tests.debug.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = D567GQY3UQ;
+				DEVELOPMENT_TEAM = PYVCDS8V4K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -578,7 +583,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 6288E38A7F05BDD66D8E5938 /* Pods-RxBarcodeScanner_Tests.release.xcconfig */;
 			buildSettings = {
-				DEVELOPMENT_TEAM = D567GQY3UQ;
+				DEVELOPMENT_TEAM = PYVCDS8V4K;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
